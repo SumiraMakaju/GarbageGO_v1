@@ -580,8 +580,10 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: Camera is loading,,,,
-  locationUsageDescription: Location is being accessed....
+
+  cameraUsageDescription: Camera is required by this app
+  locationUsageDescription: Location is required by this app
+
   microphoneUsageDescription: 
   bluetoothUsageDescription: 
   macOSTargetOSVersion: 12.0
