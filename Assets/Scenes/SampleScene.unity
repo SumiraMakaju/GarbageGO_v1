@@ -2000,7 +2000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectionUI
   collectionPanel: {fileID: 1307920545}
   contentParent: {fileID: 1172714400}
-  textPrefab: {fileID: 0}
+  textPrefab: {fileID: 1133618013856204936, guid: d3b52b7beb1ee274a909b897dea474b6, type: 3}
 --- !u!1 &1375737368
 GameObject:
   m_ObjectHideFlags: 0
