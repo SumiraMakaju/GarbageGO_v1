@@ -1,0 +1,20 @@
+{
+    "asset": "75be92efb7ecd404fa2b91e1d840d16f",
+    "fileName": "019b51af-ab1c-787d-aa28-aece1d9809d3.png",
+    "prompt": "trophy image underscore",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "5c1b6d22968a4885d89e23356856a58a",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}
