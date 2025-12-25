@@ -6,14 +6,9 @@ public class CollectTrash : MonoBehaviour
     public string monsterName = "Trash";
     private Collider objectCollider;
     private bool isDestroyed = false;
-    private Vector3 spawnPosition;
-    private Rigidbody rb;
 
     void Start()
     {
-        // Store spawn position to maintain it
-        spawnPosition = transform.position;
-        
         // Ensure the object has a collider for raycasting
         objectCollider = GetComponent<Collider>();
         if (objectCollider == null)
@@ -25,26 +20,7 @@ public class CollectTrash : MonoBehaviour
         }
         
         objectCollider.isTrigger = false;
-        
-        // Lock Rigidbody in place
-        rb = GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-            rb.useGravity = false;
-        }
-        
-        Debug.Log($"[CollectTrash] Initialized: {monsterName} on {gameObject.name} at position {spawnPosition}");
-    }
-    
-    void LateUpdate()
-    {
-        // Ensure object stays at spawn position despite any physics or animation
-        if (!isDestroyed && transform.position != spawnPosition)
-        {
-            transform.position = spawnPosition;
-        }
+        Debug.Log($"[CollectTrash] Initialized: {monsterName} on {gameObject.name}");
     }
 
     void Update()
