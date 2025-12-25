@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using System.Collections;
+using System.Collections.Generic;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,57 +9,22 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
     public TextMeshProUGUI scoreText;
 
-    [Header("Badge UI")]
-    public GameObject badgePopupPanel;
-    public Image medalImage;
-    public TextMeshProUGUI badgeText;
-
-    [Header("Medal Sprites")]
-    public Sprite bronzeMedal;
-    public Sprite silverMedal;
-    public Sprite goldMedal;
-
-    bool bronzeUnlocked, silverUnlocked, goldUnlocked;
+    public List<string> collectedMonsters = new List<string>();
 
     void Awake()
     {
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
 
-    public void AddScore(int value)
+    public void AddMonster(string monsterName)
     {
-        score += value;
-        scoreText.text = "Score: " + score;
-        CheckBadges();
-    }
+        score += 1;
+        collectedMonsters.Add(monsterName);
+        scoreText.text = score.ToString();
 
-    void CheckBadges()
-    {
-        if (score >= 50 && !bronzeUnlocked)
-        {
-            bronzeUnlocked = true;
-            StartCoroutine(ShowBadge(bronzeMedal, "🥉 Cleaner Unlocked!"));
-        }
-        else if (score >= 100 && !silverUnlocked)
-        {
-            silverUnlocked = true;
-            StartCoroutine(ShowBadge(silverMedal, "🥈 Eco Hero Unlocked!"));
-        }
-        else if (score >= 200 && !goldUnlocked)
-        {
-            goldUnlocked = true;
-            StartCoroutine(ShowBadge(goldMedal, "🥇 City Guardian Unlocked!"));
-        }
-    }
-
-    IEnumerator ShowBadge(Sprite medal, string text)
-    {
-        medalImage.sprite = medal;
-        badgeText.text = text;
-
-        badgePopupPanel.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
-        badgePopupPanel.SetActive(false);
+        BadgeManager.instance?.CheckBadge(score);
     }
 }
