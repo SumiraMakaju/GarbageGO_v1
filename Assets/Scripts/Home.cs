@@ -5,11 +5,15 @@ public class Home : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("MLAgentScene");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void backtohome(){
+        SceneManager.LoadScene("Home");
     }
 }
