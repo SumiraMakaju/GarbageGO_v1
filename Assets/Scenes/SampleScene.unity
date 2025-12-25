@@ -304,8 +304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 383.45697, y: 941.7081}
-  m_SizeDelta: {x: 182.914, y: 50.5837}
+  m_AnchoredPosition: {x: 373.4107, y: 932.5752}
+  m_SizeDelta: {x: 203.0065, y: 68.8497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174730703
 MonoBehaviour:
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -306.78674, y: 0, z: 0, w: 0}
+  m_margin: {x: -306.78674, y: -15.513977, z: 0, w: -0.0004272461}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -841,8 +841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 439, y: -88}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 377, y: -123}
+  m_SizeDelta: {x: 18.2308, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &410087039
 GameObject:
@@ -2466,7 +2466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectionUI
   collectionPanel: {fileID: 1307920545}
   contentParent: {fileID: 1172714400}
-  textPrefab: {fileID: 0}
+  textPrefab: {fileID: 1133618013856204936, guid: d3b52b7beb1ee274a909b897dea474b6, type: 3}
 --- !u!114 &1964602101
 MonoBehaviour:
   m_ObjectHideFlags: 0
