@@ -1,0 +1,85 @@
+DRAGON COLLECTION TROUBLESHOOTING CHECKLIST
+============================================
+
+If dragons are not disappearing on tap, check the following:
+
+1. SCENE SETUP
+   ☐ ScoreManager exists in scene (with TextMeshPro UI for score display)
+   ☐ Canvas exists with EventSystem component
+   ☐ Main Camera is tagged as "MainCamera"
+   ☐ Dragons are spawned in the scene (check Logs for spawn messages)
+
+2. DRAGON PREFAB SETUP
+   ☐ Dragon prefab has "Collectible" script component
+   ☐ Dragon prefab has SphereCollider component (not disabled)
+   ☐ Collider is set to: IsTrigger = false
+   ☐ Collider Radius = 5
+   ☐ monsterName field is set (e.g., "Dragon Nightmare")
+
+3. PHYSICS LAYER SETUP
+   ☐ Dragons are on Default layer (or correct physics layer)
+   ☐ Camera has correct culling mask
+   ☐ No layer collision matrix issues preventing raycast
+
+4. SCRIPT DEBUGGING
+   ☐ Open Console (Window > TextMeshPro)
+   ☐ Tap/Click a dragon
+   ☐ Look for log messages:
+      - "[Collectible] Initialized: ..." - Dragon script is ready
+      - "[Collectible] ✓ TOUCHED: ..." - Touch was detected
+      - "[Collectible] 🎉 COLLECTED: ..." - Collection successful
+
+5. INPUT DEBUGGING
+   ☐ Add InputDebugger script to any GameObject in scene
+   ☐ Tap/Click anywhere on screen
+   ☐ Check Console for raycast hit information
+   ☐ Verify dragon colliders are being hit
+
+6. UI BLOCKING CHECK
+   ☐ Make sure Canvas is not blocking input
+   ☐ Canvas RaycastTarget should be FALSE for non-interactive elements
+   ☐ Test in a scene without UI overlay
+
+7. COMMON ISSUES & FIXES
+
+   Problem: "No main camera found!" error
+   Fix: Ensure main camera is tagged as "MainCamera"
+
+   Problem: Raycast hits nothing
+   Fix: 
+   - Check collider is not disabled
+   - Check collider radius (5 is usually good)
+   - Verify dragon is visible in game view
+   - Check layer collision matrix
+
+   Problem: Raycast hits but doesn't collect
+   Fix:
+   - Verify ScoreManager instance exists
+   - Check Collectible script is not missing
+   - Check monsterName is not empty
+
+   Problem: Dragon disappears but score doesn't update
+   Fix:
+   - Verify ScoreManager.instance is not null
+   - Check TextMeshProUGUI component is assigned
+   - Verify scoreText reference in inspector
+
+CONSOLE LOGS TO WATCH FOR:
+
+✓ Successful Collection:
+   [Collectible] Initialized: Dragon Nightmare on Blue
+   [Collectible] ✓ TOUCHED: Blue (Dragon Nightmare)
+   [Collectible] 🎉 COLLECTED: Dragon Nightmare! Score: 1
+
+✗ Problems:
+   [Collectible] No main camera found! - No MainCamera in scene
+   [Collectible] ScoreManager instance not found! - ScoreManager missing
+   [InputDebugger] Raycast hit 0 objects - Colliders not being detected
+
+TESTING STEPS:
+
+1. Open scene with dragons spawned
+2. Open Console window
+3. Tap/Click on visible dragon
+4. Check Console for debug messages
+5. Verify dragon disappears and score increments
